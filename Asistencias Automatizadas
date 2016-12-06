@@ -1,0 +1,236 @@
+# Estructura_De_Datos
+// la clase cola 
+import java.util.ArrayList;
+
+
+public class cola extends ArrayList {
+
+	public void encolar(Object dato){
+		if(dato!=null){
+			this.add(dato);
+			
+		}
+		else{
+			
+			System.out.println("Introduzca un dato difente de null");
+		}
+	}
+	
+		public void desencolar (){
+			
+			if(this.size()>0){
+			this.remove(0);	
+			
+			}
+		}
+		
+		
+		public Object frente() {
+			Object datoAuxiliar=null;
+			if(this.size()>0){
+				datoAuxiliar=this.get(0);
+			}
+		return datoAuxiliar;
+		}
+	
+	
+	public boolean vacia(){
+	return this.isEmpty();
+
+	}
+}
+// la clase pila
+import java.util.ArrayList;
+
+public class pila extends ArrayList {
+
+	public void apilar (Object dato){
+		if(dato!=null){
+			this.add(dato);
+			
+		} 
+		else
+			System.out.println("Introduce un dato diferente a nullo");
+	}
+	
+	public void  desapilar(){
+		
+		if(size()>0){
+			
+		this.remove(this.size()-1);	
+				
+		}
+	}	
+		
+		
+	public Object cima () {
+	
+		Object  datoAuxiliar=null;
+		
+		if (this.size()>0)
+		
+		{
+			datoAuxiliar=this.get(this.size()-1);
+		
+		}
+		
+		return datoAuxiliar;
+	}
+		
+	
+	public boolean vacia(){
+		
+		return this.isEmpty();
+	}
+}
+  // menu principal
+  import java.util.Scanner;
+
+import java.util.Date;
+public class punto_extra {
+
+	public static void main(String[] args) {
+		
+		 Scanner sc= new Scanner(System.in);
+		
+		
+pila pila1= new pila();
+cola cola1= new cola(); 
+cola cola2= new cola();
+Date fecha = new Date();
+
+String a;
+		
+	int opc;	
+int kawaii;
+
+pila1.apilar("Francisco Javier Castorena Cobian");
+pila1.apilar("Marcos Isaac Gonzalez Mendoza");
+pila1.apilar("Julio Cesar Preciado Lopez");
+pila1.apilar("Cristian Omar Sandoval Aceves");
+pila1.apilar("Mario Alberto Contreras Alcalde");
+pila1.apilar("Ricardo Matias Alvarado Montemayor" );
+pila1.apilar("Jaime Placencia");
+pila1.apilar("Jesua Flores");
+pila1.apilar("Mario Eduardo");
+pila1.apilar("Alejandro Chavoya");
+pila1.apilar("Jesus Ariel");
+pila1.apilar("Nande");
+pila1.apilar("Alana osorio");
+
+
+cola1.encolar("Francisco Javier Castorena Cobian");
+cola1.encolar("Marcos Isaac Gonzalez Mendoza");
+cola1.encolar("Julio Cesar Preciado Lopez");
+cola1.encolar("Cristian Omar Sandoval Aceves");
+cola1.encolar("Mario Alberto Contreras Alcalde");
+cola1.encolar("Ricardo Matias Alvarado Montemayor" );
+cola1.encolar("Jaime Placencia");
+cola1.encolar("Jesua Flores");
+cola1.encolar("Mario Eduardo");
+cola1.encolar("Alejandro Chavoya");
+cola1.encolar("Jesus Ariel");
+cola1.encolar("Nande");
+cola1.encolar("Alana osorio");
+
+cola2.encolar("Francisco Javier Castorena Cobian");
+cola2.encolar("Marcos Isaac Gonzalez Mendoza");
+cola2.encolar("Julio Cesar Preciado Lopez");
+cola2.encolar("Cristian Omar Sandoval Aceves");
+cola2.encolar("Mario Alberto Contreras Alcalde");
+cola2.encolar("Ricardo Matias Alvarado Montemayor" );
+cola2.encolar("Jaime Placencia");
+cola2.encolar("Jesua Flores");
+cola2.encolar("Mario Eduardo");
+cola2.encolar("Alejandro Chavoya");
+cola2.encolar("Jesus Ariel");
+cola2.encolar("Nande");
+cola2.encolar("Alana osorio");
+
+
+kawaii=(int)(Math.random()*(13-0+1)+0);
+
+do{
+System.out.println("--------UNEDL: ASISTENCIA----------");
+System.out.println("1:Saber el listado de la asistencia ");
+System.out.println("2:Saber el lsitado completo de los alumnos 3 AM");
+System.out.println("3:Hacer la asistencia manualmente");
+System.out.println("4:salir");
+
+System.out.println("¿Que opcion escoges?");
+opc= sc.nextInt();
+	
+switch(opc){
+
+case 1:
+System.out.println("-------------UNEDL-----------");
+System.out.println("\n");
+System.out.println ("SALON 105 DE UNEDL EN EL DIA:"+"  "+fecha);
+System.out.println("\n");
+System.out.println("\n");
+		
+	
+	    
+			
+	    System.out.println ("ASISTENCIA DEL :"+fecha);
+	    System.out.println("\n");
+	    System.out.println("\n");
+	    
+	    System.out.println("      "+"Id"+"       "+"Nombres");
+	    
+	    if ( kawaii==0){
+	    	System.out.println ("Nadie vieno el dia :"+fecha);
+	    }
+	    else{
+	    
+	for ( int i=0; i<kawaii;i++){
+		System.out.println("      "+i+""+"       "+"["+pila1.cima()+"]");
+		pila1.desapilar();		
+  	   }
+	    }
+	    
+	break;
+	
+	case 2:
+	System.out.println ("\n");
+	System.out.println ("LISTADO DE ALUMNOS DE 3AM UNEDL EL DIA:");
+	System.out.println ("\n");
+	for ( int i=0; i<13;i++){
+		
+		System.out.println("["+cola1.frente()+"]");
+		cola1.desencolar();		
+  	   }
+	
+break;
+
+	case 3:
+	Object arreglo [] = new Object [13];
+		System.out.println ("\n");
+		System.out.println ("LISTADO DE ALUMNOS DE 3AM UNEDL EL DIA:");
+		System.out.println ("\n");
+		for ( int i=0; i<13;i++){
+			
+			System.out.println("["+cola1.frente()+"]");
+			System.out.println(cola1.frente()+"   "+"¿llego a clases?[SI/NO]");
+		
+			a=sc.next();
+		    arreglo[i]=a;
+		    
+			cola1.desencolar();		
+		}
+			 
+		  System.out.println("      "+"Nombres"+"       "+"ASISTENCIA");
+			System.out.println ("\n");
+			 for ( int i=0; i<13;i++){
+				
+			System.out.println("["+cola2.frente()+"]"+"       "+arreglo[i]);
+						cola2.desencolar();		
+				  	   }	
+		
+			 
+		
+		
+		break;
+} }while(opc!=4);
+
+}}
